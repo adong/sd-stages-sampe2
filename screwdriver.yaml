@@ -1,36 +1,36 @@
 ## Stages by grouping
 jobs:
-  jobA
+  jobA:
     requires: [~pr, ~commit]
     image: node:14
     steps:
       - init: echo 'init'
-  jobB
+  jobB:
     requires: [jobA]
     image: node:14
     steps:
       - init: echo 'init'
-  jobC
+  jobC:
     requires: [jobA, jobB]
     image: node:14
     steps:
       - init: echo 'init'
-  jobD
+  jobD:
     requires: [jobA, jobB, jobC]
     image: node:14
     steps:
       - init: echo 'init'
-  jobE
+  jobE:
     requires: [jobC]
     image: node:14
     steps:
       - init: echo 'init'
-  jobF
+  jobF:
     requires: [jobD]
     image: node:14
     steps:
       - init: echo 'init'
-  jobG
+  jobG:
     requires: [jobF]
     image: node:14
     steps:
